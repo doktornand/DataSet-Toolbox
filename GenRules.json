@@ -1,0 +1,156 @@
+{
+    "num_records": 100000,
+    "seed": 42,
+    "variables": [
+        {
+            "name": "customer_id",
+            "type": "integer",
+            "low": 1000000,
+            "high": 9999999
+        },
+        {
+            "name": "age",
+            "type": "continuous",
+            "distribution": "normal",
+            "params": { "loc": 42, "scale": 12 },
+            "na_rate": 0.02,
+            "clip": true,
+            "min": 18,
+            "max": 85
+        },
+        {
+            "name": "gender",
+            "type": "categorical",
+            "categories": ["Male", "Female", "Other"],
+            "probs": [0.49, 0.49, 0.02]
+        },
+        {
+            "name": "country",
+            "type": "faker",
+            "provider": "country"
+        },
+        {
+            "name": "city",
+            "type": "faker",
+            "provider": "city"
+        },
+        {
+            "name": "email",
+            "type": "faker",
+            "provider": "email"
+        },
+        {
+            "name": "job",
+            "type": "faker",
+            "provider": "job"
+        },
+        {
+            "name": "annual_income",
+            "type": "continuous",
+            "distribution": "lognormal",
+            "params": { "mean": 10.5, "sigma": 0.8 },
+            "na_rate": 0.05
+        },
+        {
+            "name": "credit_score",
+            "type": "continuous",
+            "distribution": "normal",
+            "params": { "loc": 720, "scale": 80 },
+            "na_rate": 0.03,
+            "clip": true,
+            "min": 300,
+            "max": 850
+        },
+        {
+            "name": "account_balance",
+            "type": "continuous",
+            "distribution": "normal",
+            "params": { "loc": 4500, "scale": 3200 },
+            "na_rate": 0.01
+        },
+        {
+            "name": "num_transactions_last_year",
+            "type": "integer",
+            "low": 0,
+            "high": 120
+        },
+        {
+            "name": "total_spent_last_year",
+            "type": "expression",
+            "formula": "np.maximum(annual_income * np.random.uniform(0.15, 0.45, n) + np.random.normal(0, 800, n), 0)"
+        },
+        {
+            "name": "avg_transaction_value",
+            "type": "expression",
+            "formula": "np.where(num_transactions_last_year > 0, total_spent_last_year / num_transactions_last_year, 0)"
+        },
+        {
+            "name": "signup_date",
+            "type": "datetime",
+            "start": "2018-01-01",
+            "end": "2025-04-01"
+        },
+        {
+            "name": "last_purchase_date",
+            "type": "datetime",
+            "start": "2023-01-01",
+            "end": "2026-04-28"
+        },
+        {
+            "name": "has_loyalty_card",
+            "type": "boolean",
+            "p": 0.37
+        },
+        {
+            "name": "is_high_value_customer",
+            "type": "expression",
+            "formula": "annual_income > 120000"
+        },
+        {
+            "name": "is_fraud_suspect",
+            "type": "boolean",
+            "p": 0.012
+        },
+        {
+            "name": "segment",
+            "type": "categorical",
+            "categories": ["Mass", "Premium", "VIP", "Corporate"],
+            "probs": [0.65, 0.25, 0.07, 0.03]
+        },
+        {
+            "name": "preferred_device",
+            "type": "categorical",
+            "categories": ["Mobile", "Desktop", "Tablet"],
+            "probs": [0.68, 0.27, 0.05]
+        },
+        {
+            "name": "education_level",
+            "type": "categorical",
+            "categories": ["High School", "Bachelor", "Master", "PhD", "Other"],
+            "probs": [0.35, 0.40, 0.18, 0.04, 0.03],
+            "na_rate": 0.08
+        },
+        {
+            "name": "marital_status",
+            "type": "categorical",
+            "categories": ["Single", "Married", "Divorced", "Widowed"],
+            "probs": [0.42, 0.48, 0.08, 0.02],
+            "na_rate": 0.12
+        },
+        {
+            "name": "satisfaction_score",
+            "type": "polynomial",
+            "coefficients": [0, 12, -8, 3]
+        },
+        {
+            "name": "customer_notes",
+            "type": "string",
+            "length": 35
+        },
+        {
+            "name": "risk_score",
+            "type": "expression",
+            "formula": "np.clip(850 - credit_score * 0.6 + (100000 / (annual_income + 1)) * 40 + np.random.normal(0, 25, n), 0, 100)"
+        }
+    ]
+}
