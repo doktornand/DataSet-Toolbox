@@ -1,96 +1,119 @@
-📦 DataSet-Toolbox
+# 📦 DataSet-Toolbox
 
-A lightweight and flexible toolbox for managing, preprocessing, and analyzing datasets for data science and machine learning workflows.
+A lightweight and flexible toolbox for managing, preprocessing, and
+analyzing datasets for data science and machine learning workflows.
 
-🚀 Overview
+------------------------------------------------------------------------
 
-DataSet-Toolbox is designed to simplify common dataset operations such as:
+## 🚀 Overview
 
-Loading and organizing datasets
-Cleaning and preprocessing data
-Transforming and formatting datasets
-Preparing data for machine learning pipelines
+**DataSet-Toolbox** is designed to simplify common dataset operations
+such as:
 
-This project aims to provide a modular and extensible toolkit to accelerate experimentation and reproducibility in data-driven projects.
+-   Loading and organizing datasets\
+-   Cleaning and preprocessing data\
+-   Transforming and formatting datasets\
+-   Preparing data for machine learning pipelines
 
-✨ Features
-📂 Easy dataset loading (CSV, JSON, etc.)
-🧹 Data cleaning utilities (missing values, filtering, normalization)
-🔄 Transformation pipelines
-📊 Dataset exploration helpers
-⚙️ Modular and extensible architecture
-🧪 Designed for experimentation and research workflows
-🛠️ Installation
+This project aims to provide a modular and extensible toolkit to
+accelerate experimentation and reproducibility in data-driven projects.
 
-Clone the repository:
+------------------------------------------------------------------------
 
+## ✨ Features
+
+-   📂 Easy dataset loading (CSV, JSON, etc.)
+-   🧹 Data cleaning utilities (missing values, filtering,
+    normalization)
+-   🔄 Transformation pipelines
+-   📊 Dataset exploration helpers
+-   ⚙️ Modular and extensible architecture
+-   🧪 Designed for experimentation and research workflows
+
+------------------------------------------------------------------------
+
+## 🛠️ Installation
+
+``` bash
 git clone https://github.com/doktornand/DataSet-Toolbox.git
 cd DataSet-Toolbox
-
-Install dependencies (if applicable):
-
 pip install -r requirements.txt
-📖 Usage
+```
 
-Basic example:
+------------------------------------------------------------------------
 
+## 📖 Usage
+
+``` python
 from dataset_toolbox import DatasetLoader, Preprocessor
 
-# Load dataset
 data = DatasetLoader.load_csv("data/sample.csv")
-
-# Preprocess data
 clean_data = Preprocessor.clean(data)
-
-# Transform data
 processed_data = Preprocessor.normalize(clean_data)
 
 print(processed_data.head())
-📁 Project Structure
-DataSet-Toolbox/
-│
-├── dataset_toolbox/      # Core library
-│   ├── loader/           # Data loading utilities
-│   ├── preprocessing/    # Cleaning & transformation
-│   ├── utils/            # Helper functions
-│
-├── examples/             # Example scripts & notebooks
-├── tests/                # Unit tests
-├── requirements.txt
-└── README.md
-🔧 Configuration
+```
+
+------------------------------------------------------------------------
+
+## 📁 Project Structure
+
+    DataSet-Toolbox/
+    │
+    ├── dataset_toolbox/
+    │   ├── loader/
+    │   ├── preprocessing/
+    │   ├── utils/
+    │
+    ├── examples/
+    ├── tests/
+    ├── requirements.txt
+    └── README.md
+
+------------------------------------------------------------------------
+
+## 🔧 Configuration
 
 You can customize behavior via:
 
-Config files (YAML / JSON)
-Environment variables
-Direct function parameters
-🧪 Testing
+-   Config files (YAML / JSON)
+-   Environment variables
+-   Direct function parameters
 
-Run tests with:
+------------------------------------------------------------------------
 
+## 🧪 Testing
+
+``` bash
 pytest
-🤝 Contributing
+```
 
-Contributions are welcome!
+------------------------------------------------------------------------
 
-Fork the repository
-Create a new branch
-Commit your changes
-Open a Pull Request
-📜 License
+## 🤝 Contributing
 
-This project is licensed under the MIT License (or see LICENSE file).
+1.  Fork the repository\
+2.  Create a new branch\
+3.  Commit your changes\
+4.  Open a Pull Request
 
-📌 Roadmap
- Add support for large-scale datasets (streaming / chunking)
- Integration with ML frameworks (scikit-learn, PyTorch)
- Visualization tools
- CLI interface
-🙌 Acknowledgments
+------------------------------------------------------------------------
 
-Inspired by common needs in data science workflows and existing toolboxes for dataset handling and preprocessing .
+## 📜 License
 
-📬 Contact
+MIT License (see LICENSE file).
 
-For questions or suggestions, open an issue or reach out via GitHub.
+------------------------------------------------------------------------
+
+## 📌 Roadmap
+
+-   Add support for large-scale datasets\
+-   Integration with ML frameworks\
+-   Visualization tools\
+-   CLI interface
+
+------------------------------------------------------------------------
+
+## 📬 Contact
+
+Open an issue on GitHub for questions or suggestions.
